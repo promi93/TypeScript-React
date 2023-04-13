@@ -13,7 +13,7 @@ const SingleNews = (props: SingleNewsProps) => {
     <Card style={{ width: "18rem" }} className="mx-2 my-2">
       <Card.Img variant="top" src={props.new.imageUrl} />
       {/* <Card>{props.new.publishedAt}</Card> */}
-      <Card.Body>
+      <Card.Body className="bg-light">
         <Card.Title>{props.new.title}</Card.Title>
         <Card.Text>{props.new.summary}</Card.Text>
 

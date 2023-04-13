@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <MyNav />
         <Routes>
-          <Route path="/fetch" element={<FetchComponent />} />
+          <Route path="/home" element={<FetchComponent />} />
         </Routes>
       </div>
     </BrowserRouter>
