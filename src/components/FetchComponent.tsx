@@ -1,10 +1,10 @@
 import ListGroup from "react-bootstrap/ListGroup";
 import { useEffect, useState } from "react";
-import { Book } from "../interfaces/Book";
+import { News } from "../interfaces/News";
 import SingleNews from "./SingleNews";
 
 const FetchComponent = () => {
-  const [news, setNews] = useState<Book[]>([]);
+  const [news, setNews] = useState<News[]>([]);
 
   const fetchNews = async () => {
     try {
@@ -14,7 +14,7 @@ const FetchComponent = () => {
       if (response.ok) {
         let data = await response.json();
         console.log(data);
-        // data è l'array di libri
+        // data è l'array di Articoli
         setNews(data);
       } else {
         alert("response NOT ok");
@@ -32,8 +32,8 @@ const FetchComponent = () => {
     <div className="mt-5 my-4">
       <h2>ARTICOLI DISPONIBILI</h2>
       <ListGroup className="d-flex justify-content-center flex-row flex-wrap">
-        {news.map((book) => (
-          <SingleNews />
+        {news.map((gino) => (
+          <SingleNews new={gino} key={gino.id} />
         ))}
       </ListGroup>
     </div>
